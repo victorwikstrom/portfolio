@@ -1,0 +1,61 @@
+/* Color palette */
+.palette {
+  background-color: rgb(116, 142, 200); /* Background */
+  background-color: rgb(69, 232, 252);
+  background-color: rgb(223, 28, 205);
+  background-color: rgb(41, 33, 181);
+}
+
+/* Reusable classes */
+.flex { display: flex; }
+.horizontal { flex-direction: row; }
+.vertical { flex-direction: column; }
+.center { align-items: center; justify-content: center; }
+.start { justify-content: flex-start; }
+.end { justify-content: flex-end; }
+.space-evenly { justify-content: space-evenly; }
+.space-between { justify-content: space-between; }
+.space-around { justify-content: space-around; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.top { top: 0; }
+.bottom { bottom: 0; }
+.left { left: 0; }
+.right { right: 0; }
+.white { color: white; }
+.black { color: black; }
+.bg-transparent { background-color: transparent; }
+.bg-white { background-color: white; }
+.bg-black { background-color: black; }
+
+/* Getting rid of css preset styling */
+a { text-decoration: none; color: black; }
+input { padding: 0; color: black; }
+button { border: none; }
+body { margin: 0; font-weight: 400; width: 100%; box-sizing: border-box; }
+input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+
+/* Reusable grid classes */
+.grid { display: grid; 
+        column-gap: 30px; 
+        row-gap: 30px; 
+      }
+.auto-fit {
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+} 
+
+.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.four-col {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+
+body html {
+  height: 100%;
+}

@@ -6,6 +6,23 @@
   background-color: rgb(41, 33, 181);
 }
 
+@font-face {
+  src: url(./font/HKGrotesk-Bold.ttf);
+  font-family: HKGrotesk;
+  font-weight: 700;
+}
+@font-face {
+  src: url(./font/HKGrotesk-Light.ttf);
+  font-family: HKGrotesk;
+  font-weight: 300;
+}
+@font-face {
+  src: url(./font/HKGrotesk-Regular.ttf);
+  font-family: HKGrotesk;
+  font-weight: 400;
+}
+
+
 /* Reusable classes */
 .flex { display: flex; }
 .horizontal { flex-direction: row; }
@@ -28,6 +45,8 @@
 .bg-transparent { background-color: transparent; }
 .bg-white { background-color: white; }
 .bg-black { background-color: black; }
+.bold {font-weight: 700;}
+.light {font-weight: 300;}
 
 /* Getting rid of css preset styling */
 a { text-decoration: none; color: black; }
@@ -56,6 +75,65 @@ input:focus, select:focus, textarea:focus, button:focus { outline: none; }
 }
 
 
-body html {
-  height: 100%;
+
+/* ------------- TYPOGRAPHY --------------- */
+
+body { 
+  font-family: 'HKGrotesk'; 
+  line-height: normal;
+}
+
+.large-text { font-size: 4rem; }
+.medium-text { font-size: 2rem; }
+.small-text { font-size: 1rem; }
+
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* ------------- Home page hero --------------- */
+
+.swirler {
+  height: 20rem;
+  margin: 0 2rem 0 -10rem;
+}
+
+.me-icon {
+  position: absolute;
+  height: 5rem;
+  right: 30%;
+  bottom: 58%;
+}
+
+.peace-icon {
+  position: absolute;
+  right: 28%;
+  bottom: 63%;
+  height: 2rem;
+}
+
+.intro-text {
+  width: 20rem;
+  height: 2rem;
+}
+
+/* ------------- Home page hero --------------- */
+
+.section-button {
+  height: 15rem;
+  width: 20rem;
+  border-radius: 20px;
+  background: transparent;
+
+  box-shadow: -2px 2px 0px 3px #000000;
+  transition: transform 200ms;
+
+}
+.section-button:hover {
+  background-color:rgb(41, 33, 181);
+  box-shadow: -4px 5px 0px 5px rgb(223, 28, 205);
+  transform: scale(1.2);
 }

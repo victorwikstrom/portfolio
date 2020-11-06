@@ -3,15 +3,15 @@ window.onload = main
 
 function main() {
   runIntroText()
+  setEventListeners()
 }
 
 function runIntroText() {
   const introText = [
-    "My name is Victor.",
-    "Hope you're having a great day so far.",
-    "I built this website to show some of my work.",
-    "I hope you're gonna like it.",
-    "Give me a call if you want to collaborate!"
+    "Hope you're having a great day so far!",
+    "I work with web development and digital design...",
+    "... and built this website to show some of my work.",
+    "I hope you're gonna like it!"
   ]  
   const textElement = document.getElementById('intro-text')
   let textIndex = -1
@@ -35,6 +35,13 @@ function runIntroText() {
 function setEventListeners() {
   const sectionButton = document.getElementById('section-button')
   sectionButton.addEventListener('click', showSection())
+}
+
+function showSection() {
+  console.log('test')
+  //section.style.width = '100%'
+  //section.style.height = '100%'
+  
 }
 
 

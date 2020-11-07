@@ -8,14 +8,27 @@ function main() {
 
 function runIntroText() {
   const introText = [
-    "Hope you're having a great day so far!",
-    "I work with web development and digital design...",
-    "... and built this website to show some of my work.",
-    "I hope you're gonna like it!"
+    "Hi there!",
+    "Hope you're having a great day so far.",
+    "Glad you've made it to my site.",
+    "If you haven't already figured out, my name is Victor :)",
+    "I am a Gothenburg based web developer and digital designer.",
+    "The purpose of this website is to show some of my work.",
+    "As well as my background and previous assignments.",
+    "Hope you'll enjoy it!"
   ]  
+
   const textElement = document.getElementById('intro-text')
   let textIndex = -1
-  textElement.innerText = 'Hi there!'
+
+  if (textElement.innerText === '') {
+    textElement.innerText = 'Hi there!'
+    textIndex = 0
+    advanceText()
+  } 
+  else {
+    advanceText()
+  }
 
   function advanceText() {
     textIndex++
@@ -28,7 +41,7 @@ function runIntroText() {
   function loadText(text) {
     textElement.innerText = text
   }
-  setInterval(advanceText, 2000)
+  setInterval(advanceText, 2500)
 }
 
 

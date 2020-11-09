@@ -48,43 +48,28 @@ function runIntroText() {
 
 /** Sets all events on the site */
 function setEventListeners() {
+  const skillContent = document.getElementById('skill-content')
+  const workContent = document.getElementById('work-content')
+  const backgroundContent = document.getElementById('background-content')
   const skillElement = document.getElementById('skill-container')
+  const backgroundElement = document.getElementById('background-container')
+  const workElement = document.getElementById('work-container')
+
   skillElement.addEventListener('click', () => {
-    show(skillElement)
+    skillElement.classList.add('container-open')
+    openContainerAnimation(skillElement, skillContent)
   })
 
-  const backgroundElement = document.getElementById('background-container')
   backgroundElement.addEventListener('click', () => {
-    show(backgroundElement)
+    openContainerAnimation(backgroundElement, backgroundContent)
   })
   
-  const workElement = document.getElementById('work-container')
   workElement.addEventListener('click', () => {
-    show(workElement)
+    openContainerAnimation(workElement, workContent)
   })
 }
 
-let show = (element) => {
-  const content = document.getElementById('content')
-  let width = 10 
-  let height = 7
-  let opacity = 0
-  
-  let animateContainer = () => {
-    if (width === 70 || height === 40) {
-      clearInterval(animateContainer)
-      opacity = 1
-      content.style.opacity = opacity
-    } 
-    else {
-      width += 0.5
-      height += 0.5
-      opacity += 0.005
-      element.style.width = width + 'rem'
-      element.style.height = height + 'rem'
-      content.style.opacity = opacity 
-    }
-  }
-
-  let id = setInterval(animateContainer, 5)
+const openContainerAnimation = (element, content) => {
+  element.classList.toggle('container-open')
+  content.classList.toggle('visible')
 }

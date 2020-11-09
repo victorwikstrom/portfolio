@@ -11,11 +11,12 @@ function runIntroText() {
     "Hi there!",
     "Hope you're having a great day so far.",
     "Glad you've made it to my site.",
-    "If you haven't already figured out, my name is Victor :)",
-    "I am a Gothenburg based web developer and digital designer.",
-    "The purpose of this website is to show some of my work.",
-    "As well as my background and previous assignments.",
-    "Hope you'll enjoy it!"
+    "If you haven't already figured out, my name is Victor.",
+    "I am a web developer and digital designer, based in Gothenburg.",
+    "I built this site to showcase some of my work...",
+    "... in a digital and simple yet slightly interactive way.",
+    "Hope you'll enjoy it!",
+    "And make reach out if you want to collaborate!"
   ]  
 
   const textElement = document.getElementById('intro-text')
@@ -46,16 +47,22 @@ function runIntroText() {
 
 
 function setEventListeners() {
-  const sectionButton = document.getElementById('section-button')
-  sectionButton.addEventListener('click', showSection())
+  const skillElement = document.getElementById('skill-container')
+  skillElement.addEventListener('click', showSkills)
+
+  const backgroundElement = document.getElementById('background-container')
+  backgroundElement.addEventListener('click', showBackground)
+
+  const workElement = document.getElementById('work-container')
+  workElement.addEventListener('click', showWork)
 }
 
-function showSection() {
-  console.log('test')
-  //section.style.width = '100%'
-  //section.style.height = '100%'
-  
+function showSkills() {
+  console.log('skills')
 }
-
-
-
+function showBackground() {
+  console.log('background')
+}
+function showWork() {
+  console.log('work')
+}

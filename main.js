@@ -6,15 +6,16 @@ function main() {
   setEventListeners()
 }
 
+/** Add array of strings and display each string after another */
 function runIntroText() {
   const introText = [
     "Hi there!",
     "Hope you're having a great day so far.",
     "Glad you've made it to my site.",
-    "If you haven't already figured out, my name is Victor.",
+    "If you haven't figured out already, my name is Victor.",
     "I am a web developer and digital designer, based in Gothenburg.",
     "I built this site to showcase some of my work...",
-    "... in a digital and simple yet slightly interactive way.",
+    "... in a simple, yet slightly interactive way.",
     "Hope you'll enjoy it!",
     "And make reach out if you want to collaborate!"
   ]  
@@ -45,24 +46,40 @@ function runIntroText() {
   setInterval(advanceText, 2500)
 }
 
-
+/** Sets all events on the site */
 function setEventListeners() {
   const skillElement = document.getElementById('skill-container')
-  skillElement.addEventListener('click', showSkills)
+  skillElement.addEventListener('click', () => {
+    animateContainer(skillElement)
+  })
 
   const backgroundElement = document.getElementById('background-container')
-  backgroundElement.addEventListener('click', showBackground)
-
+  backgroundElement.addEventListener('click', () => {
+    animateContainer(backgroundElement)
+  })
+  
   const workElement = document.getElementById('work-container')
-  workElement.addEventListener('click', showWork)
+  workElement.addEventListener('click', () => {
+    animateContainer(workElement)
+  })
 }
 
-function showSkills() {
-  console.log('skills')
-}
-function showBackground() {
-  console.log('background')
-}
-function showWork() {
-  console.log('work')
+let animateContainer = (element) => {
+  let width = 10 
+  let height = 7
+  
+  let growContainer = () => {
+    if (width === 70 || height === 40) {
+      clearInterval(growContainer)
+    } 
+    else {
+      width += 0.5
+      height += 0.5
+      element.style.width = width + 'rem'
+      element.style.height = height + 'rem'
+    }
+  }
+  
+  let id = setInterval(growContainer, 5)
+  
 }

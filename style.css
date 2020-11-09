@@ -78,7 +78,7 @@ input:focus, select:focus, textarea:focus, button:focus { outline: none; }
 
 .section {
   width: 100%;
-  height: 30rem;
+  height: 40rem;
   margin: auto;
 }
 

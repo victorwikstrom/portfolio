@@ -50,36 +50,41 @@ function runIntroText() {
 function setEventListeners() {
   const skillElement = document.getElementById('skill-container')
   skillElement.addEventListener('click', () => {
-    animateContainer(skillElement)
+    show(skillElement)
   })
 
   const backgroundElement = document.getElementById('background-container')
   backgroundElement.addEventListener('click', () => {
-    animateContainer(backgroundElement)
+    show(backgroundElement)
   })
   
   const workElement = document.getElementById('work-container')
   workElement.addEventListener('click', () => {
-    animateContainer(workElement)
+    show(workElement)
   })
 }
 
-let animateContainer = (element) => {
+let show = (element) => {
+  const content = document.getElementById('content')
   let width = 10 
   let height = 7
+  let opacity = 0
   
-  let growContainer = () => {
+  let animateContainer = () => {
     if (width === 70 || height === 40) {
-      clearInterval(growContainer)
+      clearInterval(animateContainer)
+      opacity = 1
+      content.style.opacity = opacity
     } 
     else {
       width += 0.5
       height += 0.5
+      opacity += 0.005
       element.style.width = width + 'rem'
       element.style.height = height + 'rem'
+      content.style.opacity = opacity 
     }
   }
-  
-  let id = setInterval(growContainer, 5)
-  
+
+  let id = setInterval(animateContainer, 5)
 }

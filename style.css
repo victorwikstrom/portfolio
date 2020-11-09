@@ -150,7 +150,7 @@ h1, h2 {
 
   margin: auto;
   margin-bottom: 10rem;
-  padding: 2rem;
+  padding: 2rem 3rem;
   float: right;
 
   transition: all 0.7s ease;
@@ -159,24 +159,20 @@ h1, h2 {
 }
 
 .content {
-  height: 28rem;
-  overflow: scroll;
+  max-height: 80vh;
+  overflow: auto;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.visible {
+.content-visible {
   opacity: 1; 
-}
-
-.hide {
-  display: hide;
 }
 
 .exit-icon {
   font-size: 2rem;
   right: 5%; 
-  top: 0%;
+  top: -3%;
   padding: 1rem;
   z-index: 10;
   cursor: pointer;
@@ -192,9 +188,20 @@ h1, h2 {
 
 .container-open {
   width: 50rem;
-  height: 50rem;
+  height: 70rem;
   cursor: default;
-  border-radius: 30px;
+}
+
+.top-content-container {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  justify-content: flex-end;
+  flex-direction: row;
+  z-index: 5;
+}
+
+.text-container {
 }
 
 

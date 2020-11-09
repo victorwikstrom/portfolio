@@ -50,26 +50,32 @@ function runIntroText() {
 function setEventListeners() {
   const skillContent = document.getElementById('skill-content')
   const workContent = document.getElementById('work-content')
-  const backgroundContent = document.getElementById('background-content')
+  const backgroundContent = document.getElementById('background-content'
   const skillElement = document.getElementById('skill-container')
   const backgroundElement = document.getElementById('background-container')
   const workElement = document.getElementById('work-container')
 
   skillElement.addEventListener('click', () => {
-    skillElement.classList.add('container-open')
-    openContainerAnimation(skillElement, skillContent)
+    containerAnimation(skillElement, skillContent)
   })
 
   backgroundElement.addEventListener('click', () => {
-    openContainerAnimation(backgroundElement, backgroundContent)
+    containerAnimation(backgroundElement, backgroundContent)
   })
   
   workElement.addEventListener('click', () => {
-    openContainerAnimation(workElement, workContent)
+    containerAnimation(workElement, workContent)
   })
 }
 
-const openContainerAnimation = (element, content) => {
-  element.classList.toggle('container-open')
-  content.classList.toggle('visible')
+
+const containerAnimation = (element, content) => {
+  if (element.classList.contains('container-open')) {
+    content.classList.remove('content-visible')
+    setTimeout( () => { element.classList.remove('container-open') }, 300)
+  }
+  else {
+    element.classList.add('container-open')
+    setTimeout( () => { content.classList.add('content-visible') }, 500)
+  }
 }

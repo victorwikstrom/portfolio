@@ -91,7 +91,7 @@ body {
 /* ------------- TYPOGRAPHY --------------- */
 
 
-h1, h2 {
+h1, h2, h3, h4 {
   margin: 0;
   background: white;
 }
@@ -201,7 +201,20 @@ h1, h2 {
   z-index: 5;
 }
 
-.text-container {
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  margin: 1rem 0 2rem 0;
 }
 
+/* ------------- BACKGROUND --------------- */
+
+.logo-container {
+  width: 20%;
+}
+
+.logo {
+  width: 3rem;
+}
 

@@ -50,7 +50,7 @@ function runIntroText() {
 function setEventListeners() {
   const skillContent = document.getElementById('skill-content')
   const workContent = document.getElementById('work-content')
-  const backgroundContent = document.getElementById('background-content'
+  const backgroundContent = document.getElementById('background-content')
   const skillElement = document.getElementById('skill-container')
   const backgroundElement = document.getElementById('background-container')
   const workElement = document.getElementById('work-container')

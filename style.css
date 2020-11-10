@@ -95,6 +95,10 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 .site-heading {
   font-size: 6rem;
   margin: 0;
@@ -129,8 +133,8 @@ h1, h2, h3, h4 {
 }
 
 .swirler {
-  height: 15rem;
-  margin: 0 2rem 0 -10rem;
+  height: 18rem;
+  margin-right: 2rem;
 }
 
 .intro-text {
@@ -148,12 +152,16 @@ h1, h2, h3, h4 {
   background: white;
   cursor: pointer;
 
-  margin: auto;
   padding: 2rem 3rem;
   float: right;
   bottom: 0;
+  margin-bottom: -5rem;
 
   transition: all 0.7s ease;
+}
+
+.content-container:hover {
+  margin-bottom: -1rem;
 }
 
 .container-open {
@@ -161,6 +169,7 @@ h1, h2, h3, h4 {
   height: 80vh;
   cursor: default;
   z-index: 10;
+  margin-bottom: -1rem;
 }
 
 .background {
@@ -266,7 +275,7 @@ h1, h2, h3, h4 {
 
 .bar {
   height: 100%;
-  background-color: rgb(41, 33, 181);
+  background-color: rgb(223, 28, 205);
   color: transparent;
   transition: all 0.2s ease;
   display: flex;

@@ -11,12 +11,15 @@ function runIntroText() {
   const introText = [
     "Hi there!",
     "Hope you're having a great day so far.",
-    "If you haven't figured out already, my name is Victor.",
-    "I am a web developer and digital designer, based in Gothenburg.",
-    "I built this site to showcase some of my work...",
+    "If you haven't already figured out, my name is Victor.",
+    "I am an aspiring web developer and digital designer, based in Gothenburg.",
+    "I built this site to present myself and some of my recent work...",
     "... in a simple, yet slightly interactive way.",
-    "Hope you'll enjoy it!",
-    "Explore the containers below"
+    "The containers below include everything you need to know about me...", 
+    "... without even meeting me.", 
+    "Pretty good, right? Considering the pandemic and all...", 
+    "... anyway, enough of me! Or at least this text that never seem to stop iterating.", 
+    "Have a nice day and make sure to reach out!"
   ]  
 
   const textElement = document.getElementById('intro-text')
@@ -32,13 +35,18 @@ function runIntroText() {
   }
 
   function advanceText() {
-    textIndex++
-    loadText(introText[textIndex])
+    if (textIndex === introText.length - 1) {
+      loadText(introText[textIndex])
+    } 
+    else {
+      textIndex++
+      loadText(introText[textIndex])
+    }
   }
   function loadText(text) {
     textElement.innerText = text
   }
-  setInterval(advanceText, 2500)
+    setInterval(advanceText, 2500)
 }
 
 
@@ -51,21 +59,16 @@ function setEventListeners() {
   const backgroundElement = document.getElementById('background-container')
   const workElement = document.getElementById('work-container')
 
-  skillElement.addEventListener('click', () => {
-    containerAnimation(skillElement, skillContent)
-  })
-
-  backgroundElement.addEventListener('click', () => {
-    containerAnimation(backgroundElement, backgroundContent)
-  })
-  
-  workElement.addEventListener('click', () => {
-    containerAnimation(workElement, workContent)
-  })
+  skillElement.addEventListener('click', () => openContainer(skillElement, skillContent))
+  backgroundElement.addEventListener('click', () => openContainer(backgroundElement, backgroundContent))
+  workElement.addEventListener('click', () => openContainer(workElement, workContent))
+  skillElement.addEventListener('mouseover', () => hoverContainer(skillElement))
+  backgroundElement.addEventListener('mouseover', () => hoverContainer(backgroundElement))
+  workElement.addEventListener('mouseover', () => hoverContainer(workElement))
 }
 
 
-const containerAnimation = (element, content) => {
+const openContainer = (element, content) => {
   if (element.classList.contains('container-open')) {
     content.classList.remove('content-fadein')
     setTimeout( () => { content.classList.remove('content-visible') }, 300)
@@ -76,4 +79,8 @@ const containerAnimation = (element, content) => {
     setTimeout( () => { content.classList.add('content-visible') }, 100)
     setTimeout( () => { content.classList.add('content-fadein') }, 600)
   }
+}
+
+const hoverContainer = (element) => {
+
 }

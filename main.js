@@ -16,7 +16,7 @@ function runIntroText() {
     "I built this site to showcase some of my work...",
     "... in a simple, yet slightly interactive way.",
     "Hope you'll enjoy it!",
-    "Make sure to reach out if you want to collaborate!"
+    "Explore the containers below"
   ]  
 
   const textElement = document.getElementById('intro-text')
@@ -33,10 +33,6 @@ function runIntroText() {
 
   function advanceText() {
     textIndex++
-    if (textIndex >= introText.length) {
-      textIndex = 0
-      loadText[introText[textIndex]]
-    }
     loadText(introText[textIndex])
   }
   function loadText(text) {
@@ -44,6 +40,7 @@ function runIntroText() {
   }
   setInterval(advanceText, 2500)
 }
+
 
 /** Sets all events on the site */
 function setEventListeners() {
@@ -77,6 +74,6 @@ const containerAnimation = (element, content) => {
   else {
     element.classList.add('container-open')
     setTimeout( () => { content.classList.add('content-visible') }, 100)
-    setTimeout( () => { content.classList.add('content-fadein') }, 500)
+    setTimeout( () => { content.classList.add('content-fadein') }, 600)
   }
 }

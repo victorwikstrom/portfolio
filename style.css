@@ -124,6 +124,10 @@ h1, h2, h3, h4 {
 
 /* ------------- Hero --------------- */
 
+.greeting-container {
+  margin-top: -10rem;
+}
+
 .swirler {
   height: 15rem;
   margin: 0 2rem 0 -10rem;
@@ -134,7 +138,7 @@ h1, h2, h3, h4 {
   padding-left: 1rem;
 }
 
-/* ------------- CONTENT CONTAINER --------------- */
+/* ------------- CONTENT CONTAINERS --------------- */
 
 .content-container {
   height: 7rem;
@@ -179,16 +183,14 @@ h1, h2, h3, h4 {
   display: none;
   flex-direction: column;
 
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
 }
 
 .content-visible {
   display: flex;
 }
 
-
 .content-fadein {
-  display: flex;
   opacity: 1; 
 }
 
@@ -236,3 +238,53 @@ h1, h2, h3, h4 {
   width: 3rem;
 }
 
+/* ------------- SKILLS --------------- */
+
+.skill-section-wrapper {
+  margin-bottom: 2rem;
+}
+
+.skill-bar-wrapper {
+  width: 100%;
+}
+
+.bars-container {
+  flex: 1;
+}
+
+.skill-text {
+  height: 1.5rem;
+  width: 15rem;
+  margin-bottom: 1.4rem;
+}
+
+.bar-container {
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+}
+
+.bar {
+  height: 100%;
+  background-color: rgb(41, 33, 181);
+  color: transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 2px;
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+.bar:hover {
+  color: black;
+  background: rgb(69, 232, 252);
+}
+
+.javascript { width: 50%; }
+.html-css { width: 70%; }
+.vs-code { width: 50%; }
+.java { width: 30%; }
+.python { width: 20%; }

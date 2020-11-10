@@ -11,13 +11,12 @@ function runIntroText() {
   const introText = [
     "Hi there!",
     "Hope you're having a great day so far.",
-    "Glad you've made it to my site.",
     "If you haven't figured out already, my name is Victor.",
     "I am a web developer and digital designer, based in Gothenburg.",
     "I built this site to showcase some of my work...",
     "... in a simple, yet slightly interactive way.",
     "Hope you'll enjoy it!",
-    "And make reach out if you want to collaborate!"
+    "Make sure to reach out if you want to collaborate!"
   ]  
 
   const textElement = document.getElementById('intro-text')
@@ -71,11 +70,13 @@ function setEventListeners() {
 
 const containerAnimation = (element, content) => {
   if (element.classList.contains('container-open')) {
-    content.classList.remove('content-visible')
+    content.classList.remove('content-fadein')
+    setTimeout( () => { content.classList.remove('content-visible') }, 300)
     setTimeout( () => { element.classList.remove('container-open') }, 300)
   }
   else {
     element.classList.add('container-open')
-    setTimeout( () => { content.classList.add('content-visible') }, 500)
+    setTimeout( () => { content.classList.add('content-visible') }, 100)
+    setTimeout( () => { content.classList.add('content-fadein') }, 500)
   }
 }

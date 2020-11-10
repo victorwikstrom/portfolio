@@ -8,41 +8,34 @@
   <link rel="stylesheet" href="./style.css">
   <script defer src="./main.js"></script>
   <script src="https://kit.fontawesome.com/0c8b01a51f.js" crossorigin="anonymous"></script>
-  
+
   <title>Victor // Web Developer & Digital Designer</title>
 
 </head>
 
 <body>
 
+  <div class='header-container absolute flex space-between'>
+    <h1 class='header-name small-text'>Victor Wikström</h1>
+  </div>
   <!-- HERO SECTION -->
-  <div class='section flex vertical center relative'>
+  <div class='main-container flex vertical center relative'>
     <div>
       <div class='flex center'>
         <div>
           <img class='swirler' src="./gifs/swirler.gif" alt="">
         </div>
         <div>
-          <h1 class='site-heading'>Victor<br>Wikström</h1>
           <p id='intro-text' class='medium-text intro-text'>Hi there!</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MAIN SECTION -->
+  <!-- BTTOM SECTIONS -->
   <main>
-    <div class='section flex vertical relative'>
-      <div id='skill-container' class='content-container relative'>
-        <h2 class='section-heading large-text absolute'>Skillset</h2>
-        <div id='skill-content' class='content relative'>
-          <div class='top-content-container flex'>
-            <i id='exit-icon' class="fas fa-times exit-icon"></i>
-          </div>
-      </div>
-    </div>
-    <div class='section flex vertical'>
-      <div id='background-container' class='content-container relative'>
+    <div class='section-container flex space-around relative'>
+      <div id='background-container' class='content-container background absolute'>
         <h2 class='section-heading large-text absolute'>Background</h2>
         <div id='background-content' class='content relative'>
           <div class='top-content-container flex'>
@@ -59,7 +52,9 @@
                 <h4>Medieinstitutet</h4>
                 <h3>Front End Developer</h3>
                 <h4>2020-2022</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur. Ipsum, aperiam nobis!</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
+                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
+                  Ipsum, aperiam nobis!</p>
               </div>
             </div>
             <div class='experience-container flex'>
@@ -70,7 +65,9 @@
                 <h4>Gothenburg School of Business Economics & Law</h4>
                 <h3>Business Administration</h3>
                 <h4>2017</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur. Ipsum, aperiam nobis!</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
+                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
+                  Ipsum, aperiam nobis!</p>
               </div>
             </div>
             <div class='experience-container flex'>
@@ -81,24 +78,34 @@
                 <h4>University of Gothenburg</h4>
                 <h3>B.Sc Information Systems Technology</h3>
                 <h4>2016-2019</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur. Ipsum, aperiam nobis!</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
+                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
+                  Ipsum, aperiam nobis!</p>
               </div>
             </div>
           </div>
-          </div>
+        </div>
       </div>
-    </div>
-    <div class='section flex vertical relative'>
-      <div id='work-container' class='content-container relative'>
-        <h2 class='section-heading large-text absolute'>Work</h2>
-        <div id='work-content' class='content relative'>
+
+      <div id='skill-container' class='content-container skill absolute'>
+        <h2 class='section-heading large-text absolute'>Skillset</h2>
+        <div id='skill-content' class='content relative'>
           <div class='top-content-container flex'>
             <i id='exit-icon' class="fas fa-times exit-icon"></i>
           </div>
         </div>
       </div>
-      <div class='test-div' id='test-div'></div>
-    </div>
+
+        <div id='work-container' class='content-container work absolute'>
+          <h2 class='section-heading large-text absolute'>Work</h2>
+          <div id='work-content' class='content relative'>
+            <div class='top-content-container flex'>
+              <i id='exit-icon' class="fas fa-times exit-icon"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
   </main>
 </body>
 

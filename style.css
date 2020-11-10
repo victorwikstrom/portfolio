@@ -1,6 +1,6 @@
 /* Color palette */
 .palette {
-  background-color: rgb(116, 142, 200); /* Background */
+  background-color: rgb(116, 142, 200); 
   background-color: rgb(69, 232, 252);
   background-color: rgb(223, 28, 205);
   background-color: rgb(41, 33, 181);
@@ -76,16 +76,16 @@ input:focus, select:focus, textarea:focus, button:focus { outline: none; }
 
 /* ------------- GLOBAL --------------- */
 
-.section {
+.main-container {
   width: 100%;
-  height: 40rem;
+  height: 100vh;
   margin: auto;
 }
 
 body { 
   font-family: 'HKGrotesk'; 
   line-height: normal;
-  padding: 3rem;
+  max-height: 100vh;
 }
 
 /* ------------- TYPOGRAPHY --------------- */
@@ -93,7 +93,6 @@ body {
 
 h1, h2, h3, h4 {
   margin: 0;
-  background: white;
 }
 
 .site-heading {
@@ -102,40 +101,36 @@ h1, h2, h3, h4 {
 }
 
 .large-text { font-size: 4rem; }
-.medium-text { font-size: 2rem; }
-.small-text { font-size: 1rem; }
+.medium-text { font-size: 2.5rem; }
+.small-text { font-size: 1.5rem; }
 
 .section-heading {
  margin-left: 5rem;
  top: -10%;
  left: 0%;
+ background: white;
 }
 
+/* ------------- Header --------------- */
 
-/* ------------- Home page hero --------------- */
+.header-container {
+  height: 3rem;
+  width: 100%;
+}
+
+.header-name {
+  margin: 1rem;
+}
+
+/* ------------- Hero --------------- */
 
 .swirler {
-  height: 20rem;
+  height: 15rem;
   margin: 0 2rem 0 -10rem;
 }
 
-.me-icon {
-  position: absolute;
-  height: 5rem;
-  right: 30%;
-  bottom: 58%;
-}
-
-.peace-icon {
-  position: absolute;
-  right: 28%;
-  bottom: 63%;
-  height: 2rem;
-}
-
 .intro-text {
-  width: 25rem;
-  height: 2rem;
+  width: 30rem;
   padding-left: 1rem;
 }
 
@@ -147,25 +142,53 @@ h1, h2, h3, h4 {
   border-radius: 20px;
   border: 3px solid black;
   background: white;
+  cursor: pointer;
 
   margin: auto;
-  margin-bottom: 10rem;
   padding: 2rem 3rem;
   float: right;
+  bottom: 0;
 
   transition: all 0.7s ease;
+}
 
-  cursor: pointer;
+.container-open {
+  width: 50rem;
+  height: 80vh;
+  cursor: default;
+  z-index: 10;
+}
+
+.background {
+  left: 0;
+}
+
+.skill {
+  left: auto; 
+  right: auto;
+}
+
+.work {
+  right: 0;
 }
 
 .content {
   max-height: 80vh;
   overflow: auto;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  display: none;
+  flex-direction: column;
+
+  transition: all 0.5s ease;
 }
 
 .content-visible {
+  display: flex;
+}
+
+
+.content-fadein {
+  display: flex;
   opacity: 1; 
 }
 
@@ -186,11 +209,6 @@ h1, h2, h3, h4 {
   text-shadow: 4px 4px 0px rgb(41, 33, 181);
 }
 
-.container-open {
-  width: 50rem;
-  height: 70rem;
-  cursor: default;
-}
 
 .top-content-container {
   position: sticky;

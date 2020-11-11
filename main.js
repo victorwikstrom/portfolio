@@ -1,13 +1,28 @@
-window.onload = main 
+window.addEventListener('load', () => { main() })
 
-
-function main() {
+const main = () => {
+  setClickEvents()
+  setHoverEvents()
   runIntroText()
-  setEventListeners()
 }
 
+/**********
+  HTML ELEMENTS (Will be fetched by several functions)
+  ************/
+ const skillContent = document.getElementById('skill-content')
+ const workContent = document.getElementById('work-content')
+ const backgroundContent = document.getElementById('background-content')
+ const skillElement = document.getElementById('skill-container')
+ const backgroundElement = document.getElementById('background-container')
+ const workElement = document.getElementById('work-container')
+ const backgroundHeadingElement = document.getElementById('background-heading')
+ const skillHeadingElement = document.getElementById('skill-heading')
+ const workHeadingElement = document.getElementById('work-heading')
+
+ let containerOpen = false
+
 /** Add array of strings and display each string after another */
-function runIntroText() {
+const runIntroText = () => {
   const introText = [
     "Hi there!",
     "Hope you're having a great day so far.",
@@ -27,7 +42,7 @@ function runIntroText() {
 
   if (textElement.innerText === '') {
     textElement.innerText = 'Hi there!'
-    textIndex = 0
+    textIndex = 1
     advanceText()
   } 
   else {
@@ -46,41 +61,50 @@ function runIntroText() {
   function loadText(text) {
     textElement.innerText = text
   }
-    setInterval(advanceText, 2500)
+  setInterval(advanceText, 2500)
 }
 
-
-/** Sets all events on the site */
-function setEventListeners() {
-  const skillContent = document.getElementById('skill-content')
-  const workContent = document.getElementById('work-content')
-  const backgroundContent = document.getElementById('background-content')
-  const skillElement = document.getElementById('skill-container')
-  const backgroundElement = document.getElementById('background-container')
-  const workElement = document.getElementById('work-container')
-
-  skillElement.addEventListener('click', () => openContainer(skillElement, skillContent))
-  backgroundElement.addEventListener('click', () => openContainer(backgroundElement, backgroundContent))
-  workElement.addEventListener('click', () => openContainer(workElement, workContent))
-  skillElement.addEventListener('mouseover', () => hoverContainer(skillElement))
-  backgroundElement.addEventListener('mouseover', () => hoverContainer(backgroundElement))
-  workElement.addEventListener('mouseover', () => hoverContainer(workElement))
+/** Set events to clickable elements that require JS */
+const setClickEvents = () => {
+  skillElement.addEventListener('click', () => { 
+    openContainer(skillElement, skillContent, skillHeadingElement)
+  })
+  backgroundElement.addEventListener('click', () => {
+    openContainer(backgroundElement, backgroundContent, backgroundHeadingElement)
+  })
+  workElement.addEventListener('click', () => {
+    openContainer(workElement, workContent, workHeadingElement)
+  })
 }
 
+const setHoverEvents = () => {
+  hoverContainer(backgroundElement, backgroundHeadingElement)
+  hoverContainer(workElement, workHeadingElement)
+  hoverContainer(skillElement, skillHeadingElement)
+}
 
-const openContainer = (element, content) => {
+const openContainer = (element, content, heading) => {
   if (element.classList.contains('container-open')) {
     content.classList.remove('content-fadein')
     setTimeout( () => { content.classList.remove('content-visible') }, 300)
     setTimeout( () => { element.classList.remove('container-open') }, 300)
+    containerOpen = false
   }
   else {
     element.classList.add('container-open')
     setTimeout( () => { content.classList.add('content-visible') }, 100)
     setTimeout( () => { content.classList.add('content-fadein') }, 600)
+    containerOpen = true
   }
 }
 
-const hoverContainer = (element) => {
-
+const hoverContainer = (element, heading) => {
+  element.onmouseenter = () => {
+    heading.classList.add('heading-visible')
+  }
+  element.onmouseleave = () => {
+    if (containerOpen === false){  
+      heading.classList.remove('heading-visible')
+    }
+  }
 }

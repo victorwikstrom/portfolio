@@ -94,6 +94,7 @@ const openContainer = (element, content, heading) => {
     element.classList.add('container-open')
     setTimeout( () => { content.classList.add('content-visible') }, 100)
     setTimeout( () => { content.classList.add('content-fadein') }, 600)
+    heading.classList.add('heading-container-open')
     containerOpen = true
   }
 }
@@ -104,7 +105,7 @@ const hoverContainer = (element, heading) => {
   }
   element.onmouseleave = () => {
     if (containerOpen === false){  
-      heading.classList.remove('heading-visible')
+      heading.classList.remove('heading-visible', 'heading-container-open')
     }
   }
 }

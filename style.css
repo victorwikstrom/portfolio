@@ -88,6 +88,10 @@ body {
   max-height: 100vh;
 }
 
+.section {
+  height: 90vh;
+}
+
 /* ------------- TYPOGRAPHY --------------- */
 
 
@@ -98,10 +102,6 @@ h1, h2, h3, h4 {
 h3 { font-size: 1.2rem}
 h4 { font-size: 0.9rem}
 p { font-size: 1rem}
-
-body {
-  overflow: hidden;
-}
 
 .site-heading {
   font-size: 6rem;
@@ -120,7 +120,7 @@ body {
  font-size: 1rem;
  margin-left: 2rem;
  margin-bottom: -3rem;
- top: 30%;
+ top: 50%;
  left: auto;
  right: auto;
  background: white;
@@ -130,9 +130,13 @@ body {
 }
 
 .heading-visible {
-  top: 0;
+  top: 35%;
   opacity: 1;
   transform: scale(3)
+}
+
+.heading-container-open {
+  top: 5%;
 }
 
 /* ------------- Header --------------- */
@@ -168,7 +172,7 @@ body {
 .content-container {
   height: 10rem;
   width: 10rem;
-  border-radius: 20px;
+  border-radius: 50%;
   border: 3px solid black;
   background: white;
   cursor: pointer;
@@ -188,6 +192,7 @@ body {
 .container-open {
   width: 50rem;
   height: 75vh;
+  border-radius: 20px;
   cursor: default;
   z-index: 10;
   margin-bottom: -1rem;
@@ -240,7 +245,6 @@ body {
   color: rgb(223, 28, 205);
   text-shadow: 4px 4px 0px rgb(41, 33, 181);
 }
-
 
 .top-content-container {
   position: sticky;

@@ -1,9 +1,10 @@
 /* Color palette */
 .palette {
-  background-color: rgb(116, 142, 200); 
-  background-color: rgb(69, 232, 252);
-  background-color: rgb(223, 28, 205);
-  background-color: rgb(41, 33, 181);
+  color: #2D5D7D; 
+  color: #F7EFFC;
+  color: #71BBDB;
+  color: #2CF6B3;
+  color: #F26DF9
 }
 
 @font-face {
@@ -92,6 +93,16 @@ body {
   height: 90vh;
 }
 
+.bg-container {
+  width: 100vw;
+  
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+}
+
 /* ------------- TYPOGRAPHY --------------- */
 
 
@@ -116,27 +127,31 @@ p { font-size: 1rem}
 .medium-text { font-size: 2.5rem; }
 .small-text { font-size: 1.5rem; }
 
-.background-heading, .skill-heading, .work-heading {  
+.background-heading, .skill-heading, .work-heading { 
+ color: black; 
  font-size: 1rem;
+
  margin-left: 2rem;
  margin-bottom: -3rem;
+ padding: 5px;
+
  top: 50%;
  left: auto;
  right: auto;
- background: white;
  opacity: 0;
+ 
  transition: all 0.5s ease;
  transform-origin: bottom center;
 }
 
 .heading-visible {
-  top: 35%;
+  top: 25%;
   opacity: 1;
   transform: scale(3)
 }
 
 .heading-container-open {
-  top: 5%;
+  top: 0%;
 }
 
 /* ------------- Header --------------- */
@@ -145,17 +160,27 @@ p { font-size: 1rem}
   height: 3rem;
   width: 100%;
   align-items: center;
+  color: #132836;
+  z-index: 10;
 }
 
-.header-name {
+.contact-bar {
+  width: 10rem;
+}
+
+.header-name, .contact-bar {
   margin: 1rem;
 }
 
-/* ------------- Hero --------------- */
-
-.greeting-container {
-  margin-top: -10rem;
+.header-link {
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+.header-link:hover {
+  font-weight: 700;
+}
+
+/* ------------- Hero --------------- */
 
 .swirler {
   height: 18rem;
@@ -163,8 +188,9 @@ p { font-size: 1rem}
 }
 
 .intro-text {
-  width: 30rem;
+  width: 40vw;
   padding-left: 1rem;
+  text-align: center;
 }
 
 /* ------------- CONTENT CONTAINERS --------------- */
@@ -179,14 +205,13 @@ p { font-size: 1rem}
 
   padding: 2rem 3rem;
   float: right;
-  bottom: 0;
-  margin-bottom: -7rem;
 
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
 }
 
 .content-container:hover {
-  margin-bottom: -1rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 7px #2D5D7D;
 }
 
 .container-open {
@@ -195,8 +220,30 @@ p { font-size: 1rem}
   border-radius: 20px;
   cursor: default;
   z-index: 10;
-  margin-bottom: -1rem;
+  /* margin-bottom: -3rem; */
 }
+
+.background-icon, .skill-icon, .work-icon  {
+  font-size: 1px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  left: 47%;
+  bottom: 45%;
+}
+
+.icon-hover {
+  text-shadow: 5px 5px #2D5D7D;
+  transform: scale(1.2);
+  bottom: 47%;
+}
+
+.icon-visible {
+  font-size: 5rem;
+  opacity: 1;
+
+
+}
+
 
 .background {
   left: 5%;
@@ -217,7 +264,6 @@ p { font-size: 1rem}
   opacity: 0;
   display: none;
   flex-direction: column;
-
   transition: all 0.7s ease;
 }
 
@@ -230,20 +276,19 @@ p { font-size: 1rem}
 }
 
 .exit-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   right: 5%; 
   top: -3%;
   padding: 1rem;
   z-index: 10;
   cursor: pointer;
 
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .exit-icon:hover {
-  transform: scale(1.3);
-  color: rgb(223, 28, 205);
-  text-shadow: 4px 4px 0px rgb(41, 33, 181);
+  transform: scale(1.4);
+  text-shadow: 4px 4px 0px #2D5D7D;
 }
 
 .top-content-container {
@@ -305,7 +350,7 @@ p { font-size: 1rem}
 
 .bar {
   height: 100%;
-  background-color: rgb(223, 28, 205);
+  background-color: #2CF6B3;
   color: transparent;
   transition: all 0.2s ease;
   display: flex;
@@ -320,7 +365,7 @@ p { font-size: 1rem}
 
 .bar:hover {
   color: black;
-  background: rgb(69, 232, 252);
+  background: #F26DF9;
 }
 
 .javascript { width: 50%; }

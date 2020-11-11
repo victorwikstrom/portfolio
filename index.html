@@ -13,24 +13,22 @@
 </head>
 
 <body> 
+e  <div class='bg-container fixed flex center'>
+    <img class='bg-image' src="./imgs/site-bg.jpg" alt="">
+  </div>
 
-  <div class='header-container absolute flex space-between'>
+  <div class='header-container fixed flex space-between'>
     <h1 class='header-name small-text'>Victor Wikström</h1>
-    <div class='contact-bar'>
-      <a href="https://github.com/victorwikstrom">Github</a>
-      <a href="https://www.linkedin.com/in/victor-wikstrom/">LinkedIn</a>
+    <div class='contact-bar flex space-between'>
+        <a class='header-link' target="_blank" href="https://github.com/victorwikstrom">Github</a>
+        <a class='header-link' target="_blank" href="https://www.linkedin.com/in/victor-wikstrom/">LinkedIn</a>
     </div>
   </div>
   <!-- HERO SECTION -->
   <div class='main-container flex vertical center relative'>
     <div>
       <div class='greeting-container flex center'>
-        <div>
-          <img class='swirler' src="./gifs/swirler.gif" alt="">
-        </div>
-        <div>
           <p id='intro-text' class='medium-text intro-text'>Hi there!</p>
-        </div>
       </div>
     </div>
   </div>
@@ -48,6 +46,7 @@
     -->
     <div class='section flex center relative'>
       <div id='background-container' class='content-container background'>
+        <i id='background-icon' class="fas fa-user-graduate absolute icon-visible background-icon"></i>
         <h2 id='background-heading' class='background-heading absolute'>Background</h2>
         <div id='background-content' class='content relative'>
           <div class='top-content-container flex'>
@@ -104,9 +103,10 @@
                 <h4>TMC</h4>
                 <h3>Consultant</h3>
                 <h4>2019-present</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
-                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
-                  Ipsum, aperiam nobis!</p>
+                <p>TMC is a unique collection of self-starting, highly skilled and almost self-employed
+                  technical professionals. Our unparalleled Employeneurship model offers engineers
+                  from all backgrounds the comforts of employment and the opportunities of
+                  entrepreneurship.</p>
               </div>
             </div>
             <div class='experience-container flex'>
@@ -115,11 +115,9 @@
               </div>
               <div class='experience-item'>
                 <h4>New Minds</h4>
-                <h3>IT-Recruitment / Project Manager</h3>
+                <h3>IT-Recruiter / Project Manager</h3>
                 <h4>2017-2019</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
-                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
-                  Ipsum, aperiam nobis!</p>
+                <p>Responsible for recruitment of engineers within a wide range of areas, such as IT, electronics, mechatronics and physics. Furhtermore assigned for manging the development of New Minds new website and graphic identity.</p>
               </div>
             </div>
             <div class='experience-container flex'>
@@ -130,9 +128,7 @@
                 <h4>Ericsson</h4>
                 <h3>Project Administrator</h3>
                 <h4>2016-2017</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
-                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
-                  Ipsum, aperiam nobis!</p>
+                <p>Responsinle for coordinating multiple, parallell projects within fiber network infrastructure. Daily communication with different stakeholders, ranging from technicians, TA's and customers.</p>
               </div>
             </div>
             <div class='experience-container flex'>
@@ -143,9 +139,7 @@
                 <h4>Telia</h4>
                 <h3>Customer Sales</h3>
                 <h4>2013-2015</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum deserunt et fugit veniam
-                  deleniti commodi, laborum in, natus unde sed, quod eligendi ipsum assumenda distinctio consectetur.
-                  Ipsum, aperiam nobis!</p>
+                <p>Responsible for sales of broadband, television and mobile within the private customer sector. Daily communication with customers via phone, email and chat. Ended up on the national list of top 10 sales representatives, for best sales results.</p>
               </div>
             </div>
           </div>
@@ -159,6 +153,7 @@
        -->
     <div class='section flex center relative'>
       <div id='skill-container' class='content-container skill'>
+        <i id='skill-icon' class="fas fa-toolbox absolute icon-visible skill-icon"></i>
         <h2 id='skill-heading' class='skill-heading absolute'>Skillset</h2>
         <div id='skill-content' class='content relative'>
           <div class='top-content-container flex'>
@@ -279,6 +274,7 @@
        -->
        <div class='section flex center relative'>
         <div id='work-container' class='content-container work'>
+          <i id='work-icon' class="fas far fa-file-alt absolute icon-visible work-icon"></i>
           <h2 id='work-heading' class='work-heading absolute'>Projects</h2>
           <div id='work-content' class='content relative'>
             <div class='top-content-container flex'>

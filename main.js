@@ -11,13 +11,16 @@ const main = () => {
   ************/
  const skillContent = document.getElementById('skill-content')
  const workContent = document.getElementById('work-content')
- const backgroundContent = document.getElementById('background-content')
+ const bgContent = document.getElementById('background-content')
  const skillElement = document.getElementById('skill-container')
- const backgroundElement = document.getElementById('background-container')
+ const bgElement = document.getElementById('background-container')
  const workElement = document.getElementById('work-container')
- const backgroundHeadingElement = document.getElementById('background-heading')
+ const bgHeadingElement = document.getElementById('background-heading')
  const skillHeadingElement = document.getElementById('skill-heading')
  const workHeadingElement = document.getElementById('work-heading')
+ const bgIconElement = document.getElementById('background-icon')
+ const skillIconElement = document.getElementById('skill-icon')
+ const workIconElement = document.getElementById('work-icon')
 
  let containerOpen = false
 
@@ -67,31 +70,33 @@ const runIntroText = () => {
 /** Set events to clickable elements that require JS */
 const setClickEvents = () => {
   skillElement.addEventListener('click', () => { 
-    openContainer(skillElement, skillContent, skillHeadingElement)
+    openContainer(skillElement, skillContent, skillHeadingElement, skillIconElement)
   })
-  backgroundElement.addEventListener('click', () => {
-    openContainer(backgroundElement, backgroundContent, backgroundHeadingElement)
+  bgElement.addEventListener('click', () => {
+    openContainer(bgElement, bgContent, bgHeadingElement, bgIconElement)
   })
   workElement.addEventListener('click', () => {
-    openContainer(workElement, workContent, workHeadingElement)
+    openContainer(workElement, workContent, workHeadingElement, workIconElement)
   })
 }
 
 const setHoverEvents = () => {
-  hoverContainer(backgroundElement, backgroundHeadingElement)
-  hoverContainer(workElement, workHeadingElement)
-  hoverContainer(skillElement, skillHeadingElement)
+  hoverContainer(bgElement, bgHeadingElement, bgIconElement)
+  hoverContainer(workElement, workHeadingElement, workIconElement)
+  hoverContainer(skillElement, skillHeadingElement, skillIconElement)
 }
 
-const openContainer = (element, content, heading) => {
+const openContainer = (element, content, heading, icon) => {
   if (element.classList.contains('container-open')) {
     content.classList.remove('content-fadein')
+    setTimeout( () => { icon.classList.add('icon-visible') }, 300) 
     setTimeout( () => { content.classList.remove('content-visible') }, 300)
     setTimeout( () => { element.classList.remove('container-open') }, 300)
     containerOpen = false
   }
   else {
     element.classList.add('container-open')
+    icon.classList.remove('icon-visible')
     setTimeout( () => { content.classList.add('content-visible') }, 100)
     setTimeout( () => { content.classList.add('content-fadein') }, 600)
     heading.classList.add('heading-container-open')
@@ -99,13 +104,16 @@ const openContainer = (element, content, heading) => {
   }
 }
 
-const hoverContainer = (element, heading) => {
+const hoverContainer = (element, heading, icon) => {
   element.onmouseenter = () => {
     heading.classList.add('heading-visible')
+    icon.classList.add('icon-hover')
   }
   element.onmouseleave = () => {
     if (containerOpen === false){  
       heading.classList.remove('heading-visible', 'heading-container-open')
+      icon.classList.add('icon-visible')
+      icon.classList.remove('icon-hover')
     }
   }
 }

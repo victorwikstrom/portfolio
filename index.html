@@ -5,41 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="global stylesheet" href="./css/global.css">
-  <link rel="element specific stylesheet" href="./css/elements.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="responsiveness stylesheet" href="./css/media-queries.css">
   <script defer src="./main.js"></script>
   <script src="https://kit.fontawesome.com/0c8b01a51f.js" crossorigin="anonymous"></script>
 
-  <title>Victor // Web Developer & Digital Designer</title>
+  <title>Victor Wikström - Web Developer & Digital Designer</title>
 </head>
 
 <body> 
+  <!-- SITE BACKGROUND -->
  <div class='bg-container fixed flex center'>
     <img class='bg-image' src="./imgs/site-bg.jpg" alt="">
-  </div>
+</div>
 
-  <div class='header-container fixed flex space-between'>
+  <!-- HEADER -->
+  <header>
+    <div class='header-container fixed flex space-between'>
     <h1 class='header-name small-text'>Victor Wikström</h1>
     <div class='contact-bar flex space-between'>
-        <a class='header-link' target="_blank" href="https://github.com/victorwikstrom">Github</a>
-        <a class='header-link' target="_blank" href="https://www.linkedin.com/in/victor-wikstrom/">LinkedIn</a>
+      <a class='header-link' target="_blank" href="https://github.com/victorwikstrom">Github</a>
+      <a class='header-link' target="_blank" href="https://www.linkedin.com/in/victor-wikstrom/">LinkedIn</a>
     </div>
-  </div>
-  <!-- INTRO SECTION -->
-  <div class='intro-container flex vertical center relative'>
+    </div>
+  </header>
+
+  <main>
+    <!--
+    INTRO SECTION
+    ********* -->
+    <div class='intro-container flex vertical center relative'>
     <div>
       <div class='greeting-container flex center'>
           <p id='intro-text' class='medium-text intro-text'>Hi there!</p>
       </div>
     </div>
-  </div>
-
-  <main>
+    </div>
     <!--
-      *********
-      BACKGROUND
-      ********* -->
+    BACKGROUND
+    ********* -->
     <div class='section flex center relative'>
       <div id='background-container' class='content-container background'>
         <i id='background-icon' class="fas fa-user-graduate absolute icon-visible background-icon"></i>
@@ -142,9 +146,9 @@
         </div>
       </div>
     </div>
-      <!--
-      SKILLSET
-      ******** -->
+    <!--
+    SKILLSET
+    ******** -->
     <div class='section flex center relative'>
       <div id='skill-container' class='content-container skill'>
         <i id='skill-icon' class="fas fa-toolbox absolute icon-visible skill-icon"></i>
@@ -159,14 +163,14 @@
             <div class='skill-bar-wrapper flex'>
               <h3 class='skill-text'>JavaScript</h3>
               <div class='bar-container flex'>
-                <div class='bar javascript'>Quite fluent. Not a wizard, but getting there!</div>
+                <div class='bar javascript'>Quite fluent. Not a wizard, but getting there</div>
                 <p class='bold'>6/10</p>
               </div>
             </div>
             <div class='skill-bar-wrapper flex'>
               <h3 class='skill-text'>HTML / CSS</h3>
               <div class='bar-container flex'>
-                <div class='bar html-css'>Manages to build some nice looking stuff, if you ask me.</div>
+                <div class='bar html-css'>Manages to build some nice looking stuff =)</div>
                 <p class='bold'>8/10</p>
               </div>
               </div>
@@ -261,9 +265,9 @@
         </div>
       </div>
     </div>
-      <!-- 
-      PROJECTS
-      ******** -->
+    <!-- 
+    PROJECTS
+    ******** -->
     <div class='section flex center relative'>
       <div id='work-container' class='content-container work'>
         <i id='work-icon' class="fas far fa-file-alt absolute icon-visible work-icon"></i>
@@ -276,7 +280,7 @@
             <h3 class='medium-text'>New Minds Website 2.0</h3>
             <div class='divider'></div>
             <h3>Description</h3>
-            <p>New Minds is a recruitment company focused to help newly graduated engineers within IT and tech find their first employer. The company is based in Gothenburg. In the project I had sole responsibility for both planning and executing. The main stakeholders in the project were the management team within New Minds consisting of the CEO, the CIO and the HR manager.
+            <p>New Minds is a recruitment company focused on helping recently engineers within IT and tech find their first employer. The company is based in Gothenburg. In the project I had sole responsibility for both planning and executing. The main stakeholders in the project were the management team within New Minds consisting of the CEO, the CIO and the HR manager.
             </p>
             <a class='project-link' 
               href="http://newminds.se"
@@ -366,7 +370,12 @@
           </div>
         </div>
     </div>
+  </main>
 
+  <!-- 
+    FOOTER LINKS
+    ******** -->
+  <footer>
     <div class='section flex center relative'>
       <div class='contact-links-container flex space-evenly'>
         <a class='footer-link' href="mailto:victor.wikstrom@icloud.com">
@@ -377,7 +386,7 @@
         </a>
       </div>
     </div>
-  </main>
+  </footer>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 window.addEventListener('load', () => main())
 
+/** Run site scripts */
 const main = () => {
   setClickEvents()
   setHoverEvents()
@@ -7,29 +8,43 @@ const main = () => {
 }
 
 /**********
-  HTML ELEMENTS (Will be fetched by several functions)
-  ************/
- const skillContent = document.getElementById('skill-content')
- const workContent = document.getElementById('work-content')
- const bgContent = document.getElementById('background-content')
- const skillElement = document.getElementById('skill-container')
+  HTML ELEMENTS 
+  (Will be fetched by several functions, hence global)
+************/
+/** Container element for background section */
  const bgElement = document.getElementById('background-container')
+ /** Container element for work section */
+ const skillElement = document.getElementById('skill-container')
+ /** Container element for work section */
  const workElement = document.getElementById('work-container')
- const exitButton = document.getElementById('exit-icon')
- const bgHeadingElement = document.getElementById('background-heading')
- const skillHeadingElement = document.getElementById('skill-heading')
- const workHeadingElement = document.getElementById('work-heading')
- const bgIconElement = document.getElementById('background-icon')
- const skillIconElement = document.getElementById('skill-icon')
+/** Content element for background section */
+const bgContent = document.getElementById('background-content')
+/** Content element for skill section */
+const skillContent = document.getElementById('skill-content')
+/** Content element for work section */
+const workContent = document.getElementById('work-content')
+/** Heading element for background section */
+const bgHeadingElement = document.getElementById('background-heading')
+/** Heading element for skill section */
+const skillHeadingElement = document.getElementById('skill-heading')
+/** Heading element for work section */
+const workHeadingElement = document.getElementById('work-heading')
+/** Icon element for background section */
+const bgIconElement = document.getElementById('background-icon')
+/** Icon element for skill section */
+const skillIconElement = document.getElementById('skill-icon')
+/** Icon element for work section */
  const workIconElement = document.getElementById('work-icon')
 
+ /** Determines whether a container is open or closed */
  let containerOpen = false
  
+ /** Site introduction text (array of strings) */
  const introText = [
    "Hi there!",
    "Hope you're having a great day so far.",
    "If you haven't already figured out, my name is Victor.",
-   "I am an aspiring web developer and digital designer, based in Gothenburg.",
+   "I am an aspiring web developer and digital designer, living in Gothenburg.",
    "I built this site to present myself and some of my recent work...",
    "... in a simple, yet slightly interactive way.",
    "The containers below will let you know alot about me...", 
@@ -39,8 +54,11 @@ const main = () => {
    "Have a nice day and make sure to reach out!"
  ]  
 
-/** Add array of strings and display each string after another */
-const iterateTextArray = (array) => {
+/**
+ * Loop through array of strings and display one after another 
+ * @param {Array} String 
+ */
+ const iterateTextArray = (array) => {
 
   const textElement = document.getElementById('intro-text')
   let textIndex = -1
@@ -55,6 +73,7 @@ const iterateTextArray = (array) => {
     advanceText()
   }
 
+  /** Advances the looping through the array */
   function advanceText() {
     if (textIndex === array.length - 1) {
       loadText(array[textIndex])
@@ -65,6 +84,10 @@ const iterateTextArray = (array) => {
       loadText(array[textIndex])
     }
   }
+  /**
+   * Load string into element
+   * @param String that are to be inserted into element
+   */
   function loadText(text) {
     textElement.innerText = text
   }
@@ -74,7 +97,7 @@ const iterateTextArray = (array) => {
     setInterval(advanceText, 3500)
 }
 
-/** Set events to clickable elements that require JS */
+/** Set click event to elements that require JS */
 const setClickEvents = () => {
   skillElement.addEventListener('click', () => { 
     openAndCloseContainer(skillElement, skillContent, skillHeadingElement, skillIconElement)
@@ -87,12 +110,20 @@ const setClickEvents = () => {
   })
 }
 
+/** Set hover event to element that require JS */
 const setHoverEvents = () => {
   hoverContainer(bgElement, bgHeadingElement, bgIconElement)
   hoverContainer(workElement, workHeadingElement, workIconElement)
   hoverContainer(skillElement, skillHeadingElement, skillIconElement)
 }
 
+ /**
+  * Run open/close-animations when element is clicked
+  * @param {Element} element Container element
+  * @param {Element} content Content element, child of container
+  * @param {Element} heading Heading element, child of container
+  * @param {Element} icon Icon element, child of container
+  */
 const openAndCloseContainer = (element, content, heading, icon) => {
   if (element.classList.contains('container-open')) {
     content.classList.remove('content-fadein')
@@ -112,6 +143,12 @@ const openAndCloseContainer = (element, content, heading, icon) => {
   }
 }
 
+ /**
+  * Run animations when element is hovered
+  * @param {Element} element Container element
+  * @param {Element} heading Heading element, child of container
+  * @param {Element} icon Icon element, child of container
+  */
 const hoverContainer = (element, heading, icon) => {
   element.onmouseenter = () => {
     heading.classList.add('heading-visible')

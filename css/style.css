@@ -1,4 +1,4 @@
-/* Color palette */
+/* COLOR PALETTE */
 .palette {
   color: #2D5D7D; 
   color: #F7EFFC;
@@ -7,9 +7,127 @@
   color: #F26DF9
 }
 
-.bg-container {
-
+/* FONTS */
+@font-face {
+  src: url(../font/HKGrotesk-Bold.ttf);
+  font-family: HKGrotesk;
+  font-weight: 700;
 }
+@font-face {
+  src: url(../font/HKGrotesk-Light.ttf);
+  font-family: HKGrotesk;
+  font-weight: 300;
+}
+@font-face {
+  src: url(../font/HKGrotesk-Regular.ttf);
+  font-family: HKGrotesk;
+  font-weight: 400;
+}
+
+/* REUSABLE CLASSES */
+.flex { display: flex; }
+.horizontal { flex-direction: row; }
+.vertical { flex-direction: column; }
+.center { align-items: center; justify-content: center; }
+.start { justify-content: flex-start; }
+.end { justify-content: flex-end; }
+.space-evenly { justify-content: space-evenly; }
+.space-between { justify-content: space-between; }
+.space-around { justify-content: space-around; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.top { top: 0; }
+.bottom { bottom: 0; }
+.left { left: 0; }
+.right { right: 0; }
+.white { color: white; }
+.black { color: black; }
+.bg-transparent { background-color: transparent; }
+.bg-white { background-color: white; }
+.bg-black { background-color: black; }
+.bold {font-weight: 700;}
+.light {font-weight: 300;}
+
+/* Getting rid of css preset styling */
+a { text-decoration: none; color: black; }
+input { padding: 0; color: black; }
+button { border: none; }
+body { margin: 0; font-weight: 400; width: 100%; box-sizing: border-box; }
+input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+
+/* Reusable grid classes */
+.grid { display: grid; 
+        column-gap: 30px; 
+        row-gap: 30px; 
+      }
+.auto-fit {
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+} 
+
+.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.four-col {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+/* ------------- GLOBAL --------------- */
+
+body { 
+  font-family: 'HKGrotesk', sans-serif; 
+  line-height: normal;
+  max-height: 100vh;
+  cursor: default;
+}
+
+.section {
+  height: 90vh;
+}
+
+/* ------------- BACKGROUND --------------- */
+
+.bg-container {
+  width: 100vw;
+  
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------- TYPOGRAPHY --------------- */
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h3 { 
+  font-size: 1.2rem
+}
+h4 { 
+  font-size: 0.9rem
+}
+p { 
+  font-size: 1rem
+}
+
+.blue { 
+  color: #2D5D7D; 
+}
+
+.light {
+  opacity: 0.7;
+}
+
+.large-text { font-size: 4rem; }
+.medium-text { font-size: 2rem; }
+.small-text { font-size: 1.5rem; }
 
 .background-heading, .skill-heading, .work-heading { 
  color: black; 
@@ -38,7 +156,7 @@
   top: -2%;
 }
 
-/* ------------- Header --------------- */
+/* ------------- HEADER --------------- */
 
 .header-container {
   height: 3rem;
@@ -49,11 +167,11 @@
 }
 
 .contact-bar {
-  width: 10rem;
+  width: 9rem;
 }
 
 .header-name, .contact-bar {
-  margin: 1rem;
+  margin: 1.5rem;
 }
 
 .header-link {
@@ -64,17 +182,23 @@
   font-weight: 700;
 }
 
-/* ------------- Hero --------------- */
+/* ------------- INTRO SECTION --------------- */
 
-.swirler {
-  height: 18rem;
-  margin-right: 2rem;
+.intro-container {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
 }
 
 .intro-text {
   width: 40vw;
   padding-left: 1rem;
   text-align: center;
+}
+
+.site-heading {
+  font-size: 6rem;
+  margin: 0;
 }
 
 /* ------------- CONTENT CONTAINERS --------------- */
@@ -95,7 +219,7 @@
 }
 
 .content-container:hover {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   box-shadow: 5px 7px #2D5D7D;
 }
 
@@ -128,7 +252,6 @@
   opacity: 1;
 
 }
-
 
 .background {
   left: 5%;
@@ -167,8 +290,8 @@
   top: -3%;
   padding: 1rem;
   z-index: 100;
+
   cursor: pointer;
-  pointer-events: all;
 
   transition: all 0.2s ease;
 }
@@ -179,12 +302,12 @@
 }
 
 .top-content-container {
-  position: sticky;
   width: 100%;
   top: 0;
+  z-index: 5;
+  position: sticky;
   justify-content: flex-end;
   flex-direction: row;
-  z-index: 5;
 }
 
 .divider {
@@ -236,18 +359,18 @@
 }
 
 .bar {
-  height: 100%;
   background-color: #71BBDB;
   color: transparent;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
+  
+  height: 100%;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: 2px;
   padding-left: 5px;
-  margin-right: 10px;
-  margin-top: -5px
+  margin-right: -5 10px 0 0;
 }
 
 .bar:hover {

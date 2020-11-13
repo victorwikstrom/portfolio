@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="global stylesheet" href="./css/global.css">
+  <link rel="element specific stylesheet" href="./css/elements.css">
+  <link rel="responsiveness stylesheet" href="./css/media-queries.css">
   <script defer src="./main.js"></script>
   <script src="https://kit.fontawesome.com/0c8b01a51f.js" crossorigin="anonymous"></script>
 
@@ -24,8 +26,8 @@
         <a class='header-link' target="_blank" href="https://www.linkedin.com/in/victor-wikstrom/">LinkedIn</a>
     </div>
   </div>
-  <!-- HERO SECTION -->
-  <div class='main-container flex vertical center relative'>
+  <!-- INTRO SECTION -->
+  <div class='intro-container flex vertical center relative'>
     <div>
       <div class='greeting-container flex center'>
           <p id='intro-text' class='medium-text intro-text'>Hi there!</p>
@@ -33,17 +35,11 @@
     </div>
   </div>
 
-  <!--
-    ***************** 
-       CONTAINERS 
-    *****************
-  -->
   <main>
     <!--
       *********
       BACKGROUND
-      *********
-    -->
+      ********* -->
     <div class='section flex center relative'>
       <div id='background-container' class='content-container background'>
         <i id='background-icon' class="fas fa-user-graduate absolute icon-visible background-icon"></i>
@@ -147,10 +143,8 @@
       </div>
     </div>
       <!--
-      ********
       SKILLSET
-      ********
-       -->
+      ******** -->
     <div class='section flex center relative'>
       <div id='skill-container' class='content-container skill'>
         <i id='skill-icon' class="fas fa-toolbox absolute icon-visible skill-icon"></i>
@@ -267,11 +261,9 @@
         </div>
       </div>
     </div>
-      <!--
-      ********
+      <!-- 
       PROJECTS
-      ********
-       -->
+      ******** -->
     <div class='section flex center relative'>
       <div id='work-container' class='content-container work'>
         <i id='work-icon' class="fas far fa-file-alt absolute icon-visible work-icon"></i>
@@ -358,7 +350,6 @@
                   <ul>
                     <li>Art direction</li>
                     <li>Graphic design</li>
-                    <li></li>
                   </ul>
                 </div>
                 <div>

@@ -1,0 +1,26 @@
+
+/* 
+Mostly setting these to make the container icon stay in the middle independent of viewport size. 
+Rest of the site is already responsive, without MQ.
+*/
+
+@media (max-width: 900px) {
+  .background-icon, .skill-icon, .work-icon {
+    left: 46%;
+  }
+  .content-container {
+    padding: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .background-icon, .skill-icon, .work-icon {
+    left: 40%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .background-icon, .skill-icon, .work-icon {
+    left: 48%;
+  }
+}
+
